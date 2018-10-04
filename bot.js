@@ -6,6 +6,7 @@ client.on('ready', () => {
 console.log("log");
 });
 
+var prefix_2 = "-"
 client.on("message", (message) => {
     
     if (isCommand(message, "tk")) {
@@ -63,7 +64,7 @@ client.on("message", (message) => {
 });
 
 isCommand=(message, input)=>{
-var args = message.content.slice(length).trim().split(/ +/g),
+var args = message.content.slice(prefix_2.length).trim().split(/ +/g),
 command = args.shift().toLowerCase();
 if(command == input) return true;
 else return false;
